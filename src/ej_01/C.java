@@ -23,7 +23,8 @@ public class C {
 			
 			// una sola cadena de conexión, en un sólo parámetro se concatena el
 			// usuario y el password
-			String url1 = "jdbc:mysql://localhost:3306/practicas" + " user= " + user + " pasword= " + password;
+			String url1 = "jdbc:mysql://localhost:3306/practicas?serverTimezone=UTC" + "&user=" + user + "&password=" + password;
+			System.out.println(url1);
 			conexion1 = DriverManager.getConnection(url1);
 			if (conexion1 != null) {
 				System.out.println("Conexión 1: Conexión a mibase satisfacoria");
@@ -34,14 +35,15 @@ public class C {
 			Properties datos = new Properties();
 			datos.put("user", user);
 			datos.put("password", password);
-			String url2 = "jdbc:mysql://localhost:3306/practicas";
+			String url2 = "jdbc:mysql://localhost:3306/practicas?serverTimezone=UTC";
 			conexion2 = DriverManager.getConnection(url2, datos);
 			if (conexion2 != null) {
 				System.out.println("Conexión 2: Conexión a mibase satisfacoria");
 			}
+			
 
 			// se envía la cadena, el usuario y el password por separado
-			String url3 = "jdbc:mysql://localhost:3306/practicas";
+			String url3 = "jdbc:mysql://localhost:3306/practicas?serverTimezone=UTC";
 			conexion3 = DriverManager.getConnection(url3, user, password);
 			if (conexion3 != null) {
 				System.out.println("Conexión 3: Conexión a mibase satisfacoria");

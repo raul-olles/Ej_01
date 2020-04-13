@@ -27,7 +27,7 @@ public class GestorDataBase {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //Crear la conexión
-			conexion = DriverManager.getConnection(servidorMysql + db, login, password);        
+			conexion = DriverManager.getConnection(servidorMysql + db + "?serverTimezone=UTC", login, password);        
         	
             return true;
             
